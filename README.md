@@ -55,7 +55,13 @@
 </br>
 
 ## Sección 1) Serverless Local y Api Gateway
-  
+
+
+### Arquitectura Lambda Function y Api gateway .
+ ![Index app](https://github.com/andresWeitzel/ProyectoClientes_ServerlessDynamoDB/blob/master/doc/lambdasApiGateway.png)
+ 
+</br>
+
 
 ### 1.0) Instalación y Configuración de Serverless Local
 * Una vez abierto el proyecto instalamos  serverless de forma Global `npm install -g serverless`
