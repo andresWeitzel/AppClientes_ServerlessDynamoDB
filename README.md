@@ -1,11 +1,28 @@
 # ProyectoClientes_ServerlessDynamoDB
 Proyecto Personal para la gestión de clientes implementando NodeJs, Serverless V3, IAM, SSM, Api Gateway, Bucket S3, DynamoDB y Otras Tecnologías.
 
-</hr>
+<hr>
 
-</br>   
+## ` Documentación y Guía del Proyecto `
+#### (Esta Documentación es para la Creación y/o Configuración de cada Servicio de AWS, se ha generado de forma sucinta en relación a la doc oficial y no oficial solventando aspectos de compatibilidad de versiones y configuraciones personalizadas. Recomiendo la ejecución de cada servicio según se indica en la misma).
 
-## 1.0) Instalación y Configuración de Serverless Local
+</br>
+
+## Indice.
+
+#### Sección 1) Configuración de Serverless Local y Api Gateway
+   
+   - [1.0) Instalación y Configuración de Serverless Local](#-1.0-instalación-y-configuración-de-serverless-local)
+  
+   - [Paso 2) Otras Configuraciones del Proyecto.](#paso-2-otras-configuraciones-del-proyecto)
+
+
+</br>
+
+## Sección 1) Configuración de Serverless Local y Api Gateway
+  
+
+### 1.0) Instalación y Configuración de Serverless Local
 * Una vez abierto el proyecto instalamos  serverless de forma Global `npm install -g serverless`
 * Seguidamente creamos toda la config de serverless para nuestro proyecto(en mi caso el nombre del proyecto es `project-dynamodb`) `serverless create --template aws-nodejs --path project-dynamodb && cd project-dynamodb`
 * Luego inicializamos el package.json en el proyecto `npm init -y`.
@@ -64,7 +81,7 @@ Proyecto Personal para la gestión de clientes implementando NodeJs, Serverless 
 
 </br>
 
-## 2.0) Configuración de Api Gateway
+### 2.0) Configuración de Api Gateway
 * API Gateway gestiona todas las tareas relacionadas con la aceptación y el procesamiento de centenares de miles de llamadas simultáneas a la API. Estas tareas incluyen la administración del tráfico, el control de la autorización y el acceso, el monitoreo y la administración de versiones de la API.
 * No es necesario la instalación de ningún paquete adicional, este servicio viene incluido en la instalación principal de serverless.
 * Vamos a generar una sección de `resources` . Esta es la plantilla de CloudFormation (Servicio de recursos de AWS) para declarar los recursos de serverless a utilizar.
@@ -280,7 +297,7 @@ Proyecto Personal para la gestión de clientes implementando NodeJs, Serverless 
 
 </br>
 
-## 3.0) Ejecución de Serverless Local
+### 3.0) Ejecución de Serverless Local
 * Por defecto tenemos configurado una lambda llamada handler a través de su función .hello
 * Comprobamos la config generada.
 * Además tenemos configurada la seguridad y manejo de responses por parte de la Api Gateway, esta nos provera un token de acceso (x-api-key) para el acceso a cada lambda.
@@ -313,7 +330,7 @@ Proyecto Personal para la gestión de clientes implementando NodeJs, Serverless 
   
 </br>
 
-##  Instalación de DynamoDB Local
+###  Instalación de DynamoDB Local
 (Guía Recomendada : https://fauna.com/blog/develop-using-serverless-offline)
 * Dentro del directorio del proyecto ejecutamos `npm i serverless-dynamodb-local --save`
 
@@ -332,14 +349,22 @@ Proyecto Personal para la gestión de clientes implementando NodeJs, Serverless 
 <hr>
  
 
-## Configuración de gitignore
+### Configuración de gitignore
    * Vamos a excluir la carpeta `node_modules` para no añadir las librerías a nuestro repositorio.
    * Creamos el archivo `.gitignore` dentro del directorio del proyecto.
    * Dentro del archivo añadimos `node_modules/`
    * Realizamos los pasos necesarios con git y para el próximo push node_modules será exluido
  
-   </br>
+</br>
  
-#### Extensiones Visual Studio Code
+### Extensiones Visual Studio Code
   * Prettier - Code formatter
   * YAML - Autoformatter .yml (alt+shift+f)
+
+
+</br>
+
+
+
+`DOCUMENTACIÓN EN PROCESO DE DESARROLLO`
+
