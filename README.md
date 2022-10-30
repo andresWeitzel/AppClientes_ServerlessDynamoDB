@@ -70,6 +70,7 @@ Proyecto Personal para la gestión de clientes implementando NodeJs, Serverless 
 * Vamos a generar una sección de `resources` . Esta es la plantilla de CloudFormation (Servicio de recursos de AWS) para declarar los recursos de serverless a utilizar.
 * En este caso vamos a extender los diversos manejos de recursos para nuestra Api Gateway. (Tipos, Templates y Códigos de Respuesta).
 * La configuración General de nuestro `serverless.yml` quedaría...
+
      ``` yml
   
    service: project-dynamodb
@@ -282,6 +283,7 @@ Proyecto Personal para la gestión de clientes implementando NodeJs, Serverless 
 ## 3.0) Ejecución de Serverless Local
 * Por defecto tenemos configurado una lambda llamada handler a través de su función .hello
 * Comprobamos la config generada.
+* Además tenemos configurada la seguridad y manejo de responses por parte de la Api Gateway, esta nos provera un token de acceso (x-api-key) para el acceso a cada lambda.
 * Levantamos serverless con el comando `sls offline start` o `serverless offline start`
 * Visualizamos el endpoint local que serverless nos genera..
 
@@ -291,19 +293,22 @@ Proyecto Personal para la gestión de clientes implementando NodeJs, Serverless 
    Offline [http for lambda] listening on http://localhost:3002
    Function names exposed for local invocation by aws-sdk:
               * hello: project-dynamodb-dev-hello
+   Remember to use 'x-api-key' on the request headers.
+   Key with token: 'd41d8cd98f00b204e9800998ecf8427e'           
               
     GET | http://localhost:3000/hello   
     POST | http://localhost:3000/2015-03-31/functions/hello/invocations 
     
     Server ready: http://localhost:4000
   ``` 
-  
-* Nos dirigimos al endpoint `http://localhost:3000/hello`
-* Visualizamos la metadata de la lambda en el navegador y obtenemos la respuesta por consola..
+* Abrimos alguna herramienta para generar peticiones http (ej: Postman) y generamos una request al endpoint generado junto con la api key de nuestro gateway  
+* Seleccionamos método `GET`, luego escribimos el endpoint `http://localhost:3000/hello`, seguidamente pestaña `Headers` en `KEY` colocamos `x-api-key` y en `VALUE` colocamos el token generado `d41d8cd98f00b204e9800998ecf8427e`.
+* Procedemos a ejecutar la request y podemos comprobar la metadata de la lambda en la consola de postman
+* También obtenemos la respuesta por consola..
   
   ``` bash
     GET /hello (λ: hello)
-    (λ: hello) RequestId: 5a2f34b5-9576-4f6a-ba49-a5903810223d  Duration: 114.74 ms  Billed Duration: 115 ms
+   (λ: hello) RequestId: 63fc1719-ae56-4d56-8296-87d45b44fc96  Duration: 124.64 ms  Billed Duration: 125 ms
   ```
   
 </br>
