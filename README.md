@@ -9,7 +9,7 @@ Proyecto Personal para la gestión de clientes implementando Serverless, Lambdas
 * Una vez abierto el proyecto instalamos  serverless de forma Global `npm install -g serverless`
 * Seguidamente creamos toda la config de serverless para nuestro proyecto(en mi caso el nombre del proyecto es `project-dynamodb`) `serverless create --template aws-nodejs --path project-dynamodb && cd project-dynamodb`
 * Luego inicializamos el package.json en el proyecto `npm init -y`.
-* Por último Instalamos el plugin serverless-offline `npm i serverless-offline`
+* Instalamos el plugin serverless-offline `npm i serverless-offline`
 * Comprobamos versión `serverless --version`
 * Salida Esperada : 
    ``` cmd
@@ -18,6 +18,28 @@ Proyecto Personal para la gestión de clientes implementando Serverless, Lambdas
     SDK: 4.3.2
 
    ```
+* Agregamos el plugin instalado de serverless-offline al archivo `serverless.yml`
+* Archivo serveless.yml:
+  ``` yml
+   service: project-dynamodb
+
+   frameworkVersion: '3'
+
+   provider:
+     name: aws
+     runtime: nodejs12.x
+
+   plugins:
+     - serverless-offline  
+
+   functions:
+     hello:
+       handler: handler.hello
+  ``` 
+   
+  
+</br>   
+
 * Guía Oficial : https://www.serverless.com//blog/serverless-framework-v3-is-live)   
 * Guía Recomendada : https://medium.com/@patricio.aranguiz/serverless-offline-aws-lambda-api-gateway-15a4dfdfbc16   
    
