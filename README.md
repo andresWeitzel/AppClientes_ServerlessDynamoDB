@@ -14,6 +14,7 @@
 | Serverless Framework Core | 3.23.0 | Core Servicios AWS |
 | Serverless Plugin | 6.2.2  | Librerías para la Definición Modular |
 | SDK | 4.3.2  | Inyección Automática de Módulas para Lambdas |
+| Amazon Api Gateway | 2.0 | Gestor, Autenticación, Control y Procesamiento de la Api | 
 | NodeJS | 14.18.1  | Librería JS |
 | VSC | 1.72.2  | IDE |
 | CMD | 10 | Símbolo del Sistema para linea de comandos | 
@@ -28,6 +29,7 @@
 | **Tecnología** | **Documentación** |               
 | -------------  | ------------- |
 | Serverless-offline |  https://www.serverless.com/plugins/serverless-offline |
+| Amazon Api Gateway |  https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html |
 | NodeJs |  https://nodejs.org/en/ |
 | VSC |  https://code.visualstudio.com/docs |
 | Git   |  https://git-scm.com/docs |
