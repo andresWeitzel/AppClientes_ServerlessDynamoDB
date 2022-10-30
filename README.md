@@ -3,7 +3,7 @@ Proyecto Personal para la gestión de clientes implementando NodeJs, Serverless 
 
 <hr>
 
-## ` Documentación y Guía del Proyecto `
+## Documentación y Guía del Proyecto
 #### (Esta Documentación es para la Creación y/o Configuración de cada Servicio de AWS, se ha generado de forma sucinta en relación a la doc oficial y no oficial solventando aspectos de compatibilidad de versiones y configuraciones personalizadas. Recomiendo la ejecución de cada servicio según se indica en la misma).
 
 </br>
@@ -12,9 +12,9 @@ Proyecto Personal para la gestión de clientes implementando NodeJs, Serverless 
 
 #### Sección 1) Configuración de Serverless Local y Api Gateway
    
-   - [1.0) Instalación y Configuración de Serverless Local](#-1.0-instalación-y-configuración-de-serverless-local)
+   - [1.0) Instalación y Configuración de Serverless Local](#1.0-instalación-y-configuración-de-serverless-local)
   
-   - [Paso 2) Otras Configuraciones del Proyecto.](#paso-2-otras-configuraciones-del-proyecto)
+   - [2.0) Configuración de Api Gateway](#2.0-configuración-de-api-gateway)
 
 
 </br>
