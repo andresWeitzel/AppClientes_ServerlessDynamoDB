@@ -57,7 +57,7 @@
 ## Sección 1) Serverless Local y Api Gateway
 
 
-### Arquitectura Lambda Function y Api gateway .
+#### Arquitectura Lambda Function y Api gateway .
  ![Index app](https://github.com/andresWeitzel/ProyectoClientes_ServerlessDynamoDB/blob/master/doc/lambdasApiGateway.png)
  
 </br>
