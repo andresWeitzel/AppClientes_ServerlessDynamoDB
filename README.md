@@ -62,6 +62,7 @@ Proyecto Personal para la gestión de clientes implementando Serverless, Lambdas
 * Comprobamos la config generada.
 * Levantamos serverless con el comando `sls offline start` o `serverless offline start`
 * Visualizamos el endpoint local que serverless nos genera..
+
      ``` bash
      Starting Offline at stage dev (us-east-1)
 
@@ -76,27 +77,17 @@ Proyecto Personal para la gestión de clientes implementando Serverless, Lambdas
   ``` 
   
 * Nos dirigimos al endpoint `http://localhost:3000/hello`
-* Visualizamos la metadata de la lambda y obetenemos la respuesta por consola..
+* Visualizamos la metadata de la lambda en el navegador y obtenemos la respuesta por consola..
   
   ``` bash
     GET /hello (λ: hello)
     (λ: hello) RequestId: 5a2f34b5-9576-4f6a-ba49-a5903810223d  Duration: 114.74 ms  Billed Duration: 115 ms
-  ``` 
-   
+  ```
+  
+</br>
 
-
-## Archivo `serverless.yml` 
-* 
-   
 ## Instalación de DynamoDB Local
 (Guía Recomendada : https://fauna.com/blog/develop-using-serverless-offline)
 * Dentro del directorio del proyecto ejecutamos `npm i serverless-dynamodb-local --save`
-* Comprobamos versión `serverless --version`
-* Salida Esperada : 
-   ``` cmd
-    Framework Core: 3.23.0
-    Plugin: 6.2.2
-    SDK: 4.3.2
 
-   ```
 </br>   
