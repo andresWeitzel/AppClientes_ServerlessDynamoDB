@@ -3,6 +3,36 @@
 
 </br>
 
+
+
+
+### Tecnologías Implementadas
+
+| **Tecnologías** | **Versión** | **Finalidad** |               
+| ------------- | ------------- | ------------- |
+| Serverless Framework Core | 3.23.0 | Core Servicios AWS |
+| Serverless Plugin | 6.2.2  | Librerías para la Definición Modular |
+| SDK | 4.3.2  | Inyección Automática de Módulas para Lambdas |
+| NodeJS | 14.18.1  | Librería JS |
+| VSC | 1.72.2  | IDE |
+| CMD | 10 | Símbolo del Sistema para linea de comandos | 
+| Git | 2.29.1  | Control de Versiones |
+
+
+
+</br>
+
+### Documentacion de las Tecnologías Implementadas.
+
+| **Tecnología** | **Documentación** |               
+| -------------  | ------------- |
+| Serverless-offline |  https://www.serverless.com/plugins/serverless-offline |
+| NodeJs |  https://nodejs.org/en/ |
+| VSC |  https://code.visualstudio.com/docs |
+| Git   |  https://git-scm.com/docs |
+
+</br>
+
 <hr>
 
 ## Documentación y Guía del Proyecto
