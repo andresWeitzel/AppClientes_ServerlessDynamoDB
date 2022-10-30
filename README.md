@@ -22,7 +22,7 @@
 
 </br>
 
-### Documentacion de las Tecnologías Implementadas.
+### Documentacion Oficial de las Tecnologías Implementadas.
 
 | **Tecnología** | **Documentación** |               
 | -------------  | ------------- |
