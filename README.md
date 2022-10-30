@@ -66,8 +66,214 @@ Proyecto Personal para la gestión de clientes implementando NodeJs, Serverless 
 
 ## 2.0) Configuración de Api Gateway
 * API Gateway gestiona todas las tareas relacionadas con la aceptación y el procesamiento de centenares de miles de llamadas simultáneas a la API. Estas tareas incluyen la administración del tráfico, el control de la autorización y el acceso, el monitoreo y la administración de versiones de la API.
-* 
+* No es necesario la instalación de ningún paquete adicional, este servicio viene incluido en la instalación principal de serverless.
+* Vamos a generar una sección de `resources` . Esta es la plantilla de CloudFormation (Servicio de recursos de AWS) para declarar los recursos de serverless a utilizar.
+* En este caso vamos a extender los diversos manejos de recursos para nuestra Api Gateway. (Tipos, Templates y Códigos de Respuesta).
+* La configuración General de nuestro `serverless.yml` quedaría...
+     ``` yml
+  
+   service: project-dynamodb
 
+   frameworkVersion: "3"
+
+   provider:
+     name: aws
+     runtime: nodejs12.x
+     stage: dev
+     region : us-west-1
+     memorySize: 512
+     timeout : 10
+
+   plugins:
+     - serverless-offline
+
+   custom:
+     serverless-offline:
+       httpPort: 4000
+
+   functions:
+     hello:
+       handler: handler.hello
+       events:
+         - httpApi:
+             method: GET
+             path: hello
+             private: true
+
+   resources:
+     Resources:
+       ApiGatewayRestApi:
+         Type: AWS::ApiGateway::RestApi
+         Properties:
+           Name: apiGatewayRestApi
+       #### Gateway Response INIT
+       GatewayResponseDefault400:
+         Type: 'AWS::ApiGateway::GatewayResponse'
+         Properties:
+           RestApiId: 
+             Ref: 'ApiGatewayRestApi'
+           ResponseType: DEFAULT_4XX
+           ResponseTemplates:
+             application/json: "{\"error\":{\"code\":\"custom-4XX-generic\",\"message\":$context.error.messageString},\"requestId\":\"$context.requestId\"}"
+       GatewayResponseDefault500:
+         Type: 'AWS::ApiGateway::GatewayResponse'
+         Properties:
+           RestApiId: 
+             Ref: 'ApiGatewayRestApi'
+           ResponseType: DEFAULT_5XX
+           ResponseTemplates:
+             application/json: "{\"error\":{\"code\":\"custom-5XX-generic\",\"message\":$context.error.messageString},\"requestId\":\"$context.requestId\"}"
+       GatewayResponseAccessDeied:
+         Type: 'AWS::ApiGateway::GatewayResponse'
+         Properties:
+           RestApiId: 
+             Ref: 'ApiGatewayRestApi'
+           ResponseType: ACCESS_DENIED
+           ResponseTemplates:
+             application/json: "{\"error\":{\"code\":\"custom-403-access-denied\",\"message\":$context.error.messageString},\"requestId\":\"$context.requestId\"}"
+       GatewayResponseApiConfigurationError:
+         Type: 'AWS::ApiGateway::GatewayResponse'
+         Properties:
+           RestApiId: 
+             Ref: 'ApiGatewayRestApi'
+           ResponseType: API_CONFIGURATION_ERROR
+           ResponseTemplates:
+             application/json: "{\"error\":{\"code\":\"custom-500-api-configuration-error\",\"message\":$context.error.messageString},\"requestId\":\"$context.requestId\"}"
+       GatewayResponseAuthorizerConfigurationError:
+         Type: 'AWS::ApiGateway::GatewayResponse'
+         Properties:
+           RestApiId: 
+             Ref: 'ApiGatewayRestApi'
+           ResponseType: AUTHORIZER_CONFIGURATION_ERROR
+           ResponseTemplates:
+             application/json: "{\"error\":{\"code\":\"custom-500-authorizer-configuration-error\",\"message\":$context.error.messageString},\"requestId\":\"$context.requestId\"}"
+       GatewayResponseAuthorizerFailure:
+         Type: 'AWS::ApiGateway::GatewayResponse'
+         Properties:
+           RestApiId: 
+             Ref: 'ApiGatewayRestApi'
+           ResponseType: AUTHORIZER_FAILURE
+           ResponseTemplates:
+             application/json: "{\"error\":{\"code\":\"custom-500-authorizer-failure\",\"message\":$context.error.messageString},\"requestId\":\"$context.requestId\"}"
+       GatewayResponseBadRequestBody:
+         Type: 'AWS::ApiGateway::GatewayResponse'
+         Properties:
+           RestApiId: 
+             Ref: 'ApiGatewayRestApi'
+           ResponseType: BAD_REQUEST_BODY
+           ResponseTemplates:
+             application/json: "{\"error\":{\"code\":\"custom-400-bad-request-body\",\"message\":$context.error.messageString},\"requestId\":\"$context.requestId\"}"
+       GatewayResponseBadRequestParameters:
+         Type: 'AWS::ApiGateway::GatewayResponse'
+         Properties:
+           RestApiId: 
+             Ref: 'ApiGatewayRestApi'
+           ResponseType: BAD_REQUEST_PARAMETERS
+           ResponseTemplates:
+             application/json: "{\"error\":{\"code\":\"custom-400-bad-request-parameters\",\"message\":$context.error.messageString},\"requestId\":\"$context.requestId\"}"
+       GatewayResponseExpiredToken:
+         Type: 'AWS::ApiGateway::GatewayResponse'
+         Properties:
+           RestApiId: 
+             Ref: 'ApiGatewayRestApi'
+           ResponseType: EXPIRED_TOKEN
+           ResponseTemplates:
+             application/json: "{\"error\":{\"code\":\"custom-403-expired-token\",\"message\":$context.error.messageString},\"requestId\":\"$context.requestId\"}"
+       GatewayResponseIntegrationFailure:
+         Type: 'AWS::ApiGateway::GatewayResponse'
+         Properties:
+           RestApiId: 
+             Ref: 'ApiGatewayRestApi'
+           ResponseType: INTEGRATION_FAILURE
+           ResponseTemplates:
+             application/json: "{\"error\":{\"code\":\"custom-504-integration-failure\",\"message\":$context.error.messageString},\"requestId\":\"$context.requestId\"}"
+       GatewayResponseIntegrationTimeout:
+         Type: 'AWS::ApiGateway::GatewayResponse'
+         Properties:
+           RestApiId: 
+             Ref: 'ApiGatewayRestApi'
+           ResponseType: INTEGRATION_TIMEOUT
+           ResponseTemplates:
+             application/json: "{\"error\":{\"code\":\"custom-504-integration-timeout\",\"message\":$context.error.messageString},\"requestId\":\"$context.requestId\"}"
+       GatewayResponseInvalidApiKey:
+         Type: 'AWS::ApiGateway::GatewayResponse'
+         Properties:
+           RestApiId: 
+             Ref: 'ApiGatewayRestApi'
+           ResponseType: INVALID_API_KEY
+           ResponseTemplates:
+             application/json: "{\"error\":{\"code\":\"custom-403-invalid-api-key\",\"message\":$context.error.messageString},\"requestId\":\"$context.requestId\"}"
+       GatewayResponseInvalidSignature:
+         Type: 'AWS::ApiGateway::GatewayResponse'
+         Properties:
+           RestApiId: 
+             Ref: 'ApiGatewayRestApi'
+           ResponseType: INVALID_SIGNATURE
+           ResponseTemplates:
+             application/json: "{\"error\":{\"code\":\"custom-403-invalid-signature\",\"message\":$context.error.messageString},\"requestId\":\"$context.requestId\"}"
+       GatewayResponseMissingAuthenticationToken:
+         Type: 'AWS::ApiGateway::GatewayResponse'
+         Properties:
+           RestApiId: 
+             Ref: 'ApiGatewayRestApi'
+           ResponseType: MISSING_AUTHENTICATION_TOKEN
+           ResponseTemplates:
+             application/json: "{\"error\":{\"code\":\"custom-403-missing-authentication-token\",\"message\":$context.error.messageString},\"requestId\":\"$context.requestId\"}"
+       GatewayResponseQuotaExceeded:
+         Type: 'AWS::ApiGateway::GatewayResponse'
+         Properties:
+           RestApiId: 
+             Ref: 'ApiGatewayRestApi'
+           ResponseType: QUOTA_EXCEEDED
+           ResponseTemplates:
+             application/json: "{\"error\":{\"code\":\"custom-429-quota-exceeded\",\"message\":$context.error.messageString},\"requestId\":\"$context.requestId\"}"
+       GatewayResponseRequestTooLarge:
+         Type: 'AWS::ApiGateway::GatewayResponse'
+         Properties:
+           RestApiId: 
+             Ref: 'ApiGatewayRestApi'
+           ResponseType: REQUEST_TOO_LARGE
+           ResponseTemplates:
+             application/json: "{\"error\":{\"code\":\"custom-413-request-too-large\",\"message\":$context.error.messageString},\"requestId\":\"$context.requestId\"}"
+       GatewayResponseResourceNotFound:
+         Type: 'AWS::ApiGateway::GatewayResponse'
+         Properties:
+           RestApiId: 
+             Ref: 'ApiGatewayRestApi'
+           ResponseType: RESOURCE_NOT_FOUND
+           ResponseTemplates:
+             application/json: "{\"error\":{\"code\":\"custom-404-resource-not-found\",\"message\":$context.error.messageString},\"requestId\":\"$context.requestId\"}"
+       GatewayResponseThrottled:
+         Type: 'AWS::ApiGateway::GatewayResponse'
+         Properties:
+           RestApiId: 
+             Ref: 'ApiGatewayRestApi'
+           ResponseType: THROTTLED
+           ResponseTemplates:
+             application/json: "{\"error\":{\"code\":\"custom-429-throttled\",\"message\":$context.error.messageString},\"requestId\":\"$context.requestId\"}"
+       GatewayResponseUnauthorized:
+         Type: 'AWS::ApiGateway::GatewayResponse'
+         Properties:
+           RestApiId: 
+             Ref: 'ApiGatewayRestApi'
+           ResponseType: UNAUTHORIZED
+           ResponseTemplates:
+             application/json: "{\"error\":{\"code\":\"custom-401-unauthorized\",\"message\":$context.error.messageString},\"requestId\":\"$context.requestId\"}"
+       GatewayResponseUnauthorizedMediType:
+         Type: 'AWS::ApiGateway::GatewayResponse'
+         Properties:
+           RestApiId: 
+             Ref: 'ApiGatewayRestApi'
+           ResponseType: UNSUPPORTED_MEDIA_TYPE
+           ResponseTemplates:
+             application/json: "{\"error\":{\"code\":\"custom-415-unsupported-media-type\",\"message\":$context.error.messageString},\"requestId\":\"$context.requestId\"}"
+       #### Gateway Response END
+
+  ```
+
+</br>   
+
+* Código Base : https://gist.github.com/jonatassaraiva/4c33dd8225605c02318cd71a55b2335d
 
 
 
