@@ -92,6 +92,13 @@
 
 </br>
 
+* https://dynobase.dev/run-dynamodb-locally/
+* https://sitiobigdata.com/2018/02/05/tablas-en-dynamodb-creacion-carga/#
+* https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-dynamo-db.html
+* https://dynobase.dev/run-dynamodb-locally/#connecting-dynamodb-offline-cli
+
+</br>
+
 
 <hr>
  
