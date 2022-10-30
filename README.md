@@ -19,6 +19,7 @@ Proyecto Personal para la gestión de clientes implementando NodeJs, Serverless 
 
    ```
 * Agregamos el plugin instalado de serverless-offline al archivo `serverless.yml`
+* Configuramos los diversos parámetros necesarios del provider
 * Configuramos tipo de método y path a través de httpApi.
 * Configuramos el puerto http 
 * Archivo serveless.yml..
@@ -31,6 +32,10 @@ Proyecto Personal para la gestión de clientes implementando NodeJs, Serverless 
    provider:
      name: aws
      runtime: nodejs12.x
+     stage: dev
+     region : us-west-1
+     memorySize: 512
+     timeout : 20
 
    plugins:
      - serverless-offline 
@@ -53,11 +58,22 @@ Proyecto Personal para la gestión de clientes implementando NodeJs, Serverless 
 </br>   
 
 * Guía Oficial : https://www.serverless.com//blog/serverless-framework-v3-is-live)   
-* Guía Recomendada : https://medium.com/@patricio.aranguiz/serverless-offline-aws-lambda-api-gateway-15a4dfdfbc16   
-   
+* Guía Recomendada : https://medium.com/@patricio.aranguiz/serverless-offline-aws-lambda-api-gateway-15a4dfdfbc16
+* Config Parámetros Provider : https://www.tutorialspoint.com/serverless/serverless_regions_memory_size_timeouts.htm
+
+
 </br>
 
-## 2.0) Ejecución de Serverless Local
+## 2.0) Configuración de Api Gateway
+* API Gateway gestiona todas las tareas relacionadas con la aceptación y el procesamiento de centenares de miles de llamadas simultáneas a la API. Estas tareas incluyen la administración del tráfico, el control de la autorización y el acceso, el monitoreo y la administración de versiones de la API.
+* 
+
+
+
+
+</br>
+
+## 3.0) Ejecución de Serverless Local
 * Por defecto tenemos configurado una lambda llamada handler a través de su función .hello
 * Comprobamos la config generada.
 * Levantamos serverless con el comando `sls offline start` o `serverless offline start`
@@ -86,7 +102,7 @@ Proyecto Personal para la gestión de clientes implementando NodeJs, Serverless 
   
 </br>
 
-## 3.0) Instalación de DynamoDB Local
+##  Instalación de DynamoDB Local
 (Guía Recomendada : https://fauna.com/blog/develop-using-serverless-offline)
 * Dentro del directorio del proyecto ejecutamos `npm i serverless-dynamodb-local --save`
 
