@@ -74,7 +74,15 @@ Proyecto Personal para la gestión de clientes implementando Serverless, Lambdas
     
     Server ready: http://localhost:4000
   ``` 
-* Nos dirigimos al `http://localhost:3000/hello`
+  
+* Nos dirigimos al endpoint `http://localhost:3000/hello`
+* Visualizamos la metadata de la lambda y obetenemos la respuesta por consola..
+  
+  ``` bash
+    GET /hello (λ: hello)
+    (λ: hello) RequestId: 5a2f34b5-9576-4f6a-ba49-a5903810223d  Duration: 114.74 ms  Billed Duration: 115 ms
+  ``` 
+   
 
 
 ## Archivo `serverless.yml` 
