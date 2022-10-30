@@ -10,7 +10,7 @@ Proyecto Personal para la gestión de clientes implementando NodeJs, Serverless 
 
 ### Indice.
 
-#### Sección 1) Configuración y Ejecución de Serverless Local y Api Gateway
+#### Sección 1) Serverless Local y Api Gateway
    
    - [1.0) Instalación y Configuración de Serverless Local](#10-instalación-y-configuración-de-serverless-local)
   
@@ -21,7 +21,7 @@ Proyecto Personal para la gestión de clientes implementando NodeJs, Serverless 
 
 </br>
 
-## Sección 1) Configuración y Ejecución de Serverless Local y Api Gateway
+## Sección 1) Serverless Local y Api Gateway
   
 
 ### 1.0) Instalación y Configuración de Serverless Local
