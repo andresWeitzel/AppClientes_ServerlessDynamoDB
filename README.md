@@ -20,6 +20,7 @@ Proyecto Personal para la gestión de clientes implementando Serverless, Lambdas
    ```
 * Agregamos el plugin instalado de serverless-offline al archivo `serverless.yml`
 * Configuramos tipo de método y path a través de httpApi.
+* Configuramos el puerto http 
 * Archivo serveless.yml..
   ``` yml
   
@@ -32,7 +33,11 @@ Proyecto Personal para la gestión de clientes implementando Serverless, Lambdas
      runtime: nodejs12.x
 
    plugins:
-     - serverless-offline  
+     - serverless-offline 
+
+   custom: 
+     serverless-offline:
+       httpPort: 4000   
 
    functions:
      hello:
@@ -63,10 +68,13 @@ Proyecto Personal para la gestión de clientes implementando Serverless, Lambdas
    Offline [http for lambda] listening on http://localhost:3002
    Function names exposed for local invocation by aws-sdk:
               * hello: project-dynamodb-dev-hello
-
-   ┌───────────────────────────────────────────────────────────────────┐│                                                                   ││   GET | http://localhost:3000/hello                               ││   POST |                                                          ││   http://localhost:3000/2015-03-31/functions/hello/invocations 
+              
+    GET | http://localhost:3000/hello   
+    POST | http://localhost:3000/2015-03-31/functions/hello/invocations 
+    
+    Server ready: http://localhost:4000
   ``` 
-* Nos dirigimos al `http://localhost:3002/hello`
+* Nos dirigimos al `http://localhost:3000/hello`
 
 
 ## Archivo `serverless.yml` 
