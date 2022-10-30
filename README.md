@@ -25,7 +25,7 @@
 
 </br>
 
-### Documentacion Oficial de las Tecnologías Implementadas.
+### Documentación Oficial de las Tecnologías Implementadas.
 
 | **Tecnología** | **Documentación** |               
 | -------------  | ------------- |
@@ -77,7 +77,9 @@
    
 #### Sección 2) SSM e IAM
    
-   - [4.0) Instalación y Configuración de SSM ](#40-instalación-y-configuración-de-ssm)
+   - [4.0) Instalación de SSM Local ](#40-instalación-de-ssm-local)
+   
+   - [5.0) Configuración de SSM Local ](#50-configuración-de-ssm-local)
   
 
 </br>
@@ -403,16 +405,16 @@
   
 </br>
 
-## Sección 2) SSM e IAM
+## Sección 2) SSM e IAM 
 
 
 #### Arquitectura Lambda Function y SSM .
- ![Index app](https://github.com/andresWeitzel/ProyectoClientes_ServerlessDynamoDB/blob/master/doc/lambdasApiGateway.png)
+ ![Index app](https://github.com/andresWeitzel/ProyectoClientes_ServerlessDynamoDB/blob/master/doc/ssmLambdas.png)
  
 </br>
 
 
-### 4.0) Instalación y Configuración de SSM
+### 4.0) Instalación SSM Local
 * Una vez abierto el proyecto instalamos  serverless de forma Global `npm install -g serverless`
   
   
