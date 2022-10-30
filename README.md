@@ -90,4 +90,24 @@
 (Guía Recomendada : https://fauna.com/blog/develop-using-serverless-offline)
 * Dentro del directorio del proyecto ejecutamos `npm i serverless-dynamodb-local --save`
 
-</br>   
+</br>
+
+
+<hr>
+ 
+
+## Configuración de gitignore
+   * Vamos a excluir la carpeta `node_modules` para no añadir las librerías a nuestro repositorio.
+   * Creamos el archivo `.gitignore` fuera de `src`
+   * Dentro del mismo añadirmos `node_modules/`
+   * Seguidamente en la consola colocamos los siguentes comandos (respetar punto final)
+       * `git rm -r --cached .`
+       * `git add .`
+       * `git commit -m "remove gitignore files"`
+       * `git push`
+ 
+   </br>
+ 
+#### Extensiones Visual Studio Code
+  * Prettier - Code formatter
+  * YAML - Autoformatter .yml (alt+shift+f)
