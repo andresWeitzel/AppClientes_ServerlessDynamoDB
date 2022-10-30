@@ -1,5 +1,5 @@
 # ProyectoClientes_ServerlessDynamoDB
-* Proyecto Personal para la gestión de clientes implementando Serverless, Lambdas, Api Gateway y DynamoDB
+* Proyecto Personal para la gestión de clientes implementando NodeJs, Serverless, Api Gateway, DynamoDB y Otras Tecnologías
 
 </hr>
 
