@@ -16,7 +16,7 @@ Proyecto Personal para la gestión de clientes implementando NodeJs, Serverless 
   
    - [2.0) Configuración de Api Gateway](#20-configuración-de-api-gateway)
    
-   - [3.0) Ejecución de Serverless Local](#230-ejecución-de-serverless-local)
+   - [3.0) Ejecución de Serverless Local](#30-ejecución-de-serverless-local)
 
 
 </br>
