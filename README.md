@@ -12,7 +12,7 @@ Proyecto Personal para la gestión de clientes implementando Serverless, Lambdas
 * Instalamos el plugin serverless-offline `npm i serverless-offline`
 * Comprobamos versión `serverless --version`
 * Salida Esperada ..
-   ``` cmd
+   ``` bash
     Framework Core: 3.23.0
     Plugin: 6.2.2
     SDK: 4.3.2
@@ -62,7 +62,7 @@ Proyecto Personal para la gestión de clientes implementando Serverless, Lambdas
 * Comprobamos la config generada.
 * Levantamos serverless con el comando `sls offline start` o `serverless offline start`
 * Visualizamos el endpoint local que serverless nos genera..
-     ``` cmd
+     ``` bash
      Starting Offline at stage dev (us-east-1)
 
    Offline [http for lambda] listening on http://localhost:3002
