@@ -97,6 +97,8 @@ Proyecto Personal para la gestión de clientes implementando NodeJs, Serverless 
 * https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-dynamo-db.html
 * https://dynobase.dev/run-dynamodb-locally/#connecting-dynamodb-offline-cli
 
+* ARQUITECTURA A SEGUIR : https://www.freecodecamp.org/news/complete-back-end-system-with-serverless/
+
 </br>
 
 
