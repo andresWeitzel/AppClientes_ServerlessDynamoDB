@@ -11,9 +11,10 @@
 
 | **Tecnologías** | **Versión** | **Finalidad** |               
 | ------------- | ------------- | ------------- |
+| SDK | 4.3.2  | Inyección Automática de Módulas para Lambdas |
 | Serverless Framework Core | 3.23.0 | Core Servicios AWS |
 | Serverless Plugin | 6.2.2  | Librerías para la Definición Modular |
-| SDK | 4.3.2  | Inyección Automática de Módulas para Lambdas |
+| Systems Manager Parameter Store (SSM) | 3.0 | Manejo de Variables de Entorno |
 | Amazon Api Gateway | 2.0 | Gestor, Autenticación, Control y Procesamiento de la Api | 
 | NodeJS | 14.18.1  | Librería JS |
 | VSC | 1.72.2  | IDE |
@@ -28,11 +29,32 @@
 
 | **Tecnología** | **Documentación** |               
 | -------------  | ------------- |
-| Serverless-offline |  https://www.serverless.com/plugins/serverless-offline |
+| Serverless Framework V3 |  https://www.serverless.com//blog/serverless-framework-v3-is-live |
 | Amazon Api Gateway |  https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html |
+| Systems Manager Parameter Store (SSM) | https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html |
 | NodeJs |  https://nodejs.org/en/ |
 | VSC |  https://code.visualstudio.com/docs |
 | Git   |  https://git-scm.com/docs |
+
+</br>
+
+### Plugins Implementados.
+
+| **Plugin** | **Descarga** |               
+| -------------  | ------------- |
+| serverless-offline |  https://www.serverless.com/plugins/serverless-offline |
+| serverless-offline-ssm |  https://www.npmjs.com/package/serverless-offline-ssm |
+
+
+</br>
+
+### Extensiones VSC Implementados.
+
+| **Extensión** |              
+| -------------  | 
+| Prettier - Code formatter |
+| YAML - Autoformatter .yml (alt+shift+f) |
+
 
 </br>
 
@@ -52,7 +74,11 @@
    - [2.0) Configuración de Api Gateway](#20-configuración-de-api-gateway)
    
    - [3.0) Ejecución de Serverless Local](#30-ejecución-de-serverless-local)
-
+   
+#### Sección 2) SSM e IAM
+   
+   - [4.0) Instalación y Configuración de SSM ](#40-instalación-y-configuración-de-ssm)
+  
 
 </br>
 
@@ -372,6 +398,30 @@
    (λ: hello) RequestId: 63fc1719-ae56-4d56-8296-87d45b44fc96  Duration: 124.64 ms  Billed Duration: 125 ms
   ```
   
+  
+  
+  
+</br>
+
+## Sección 2) SSM e IAM
+
+
+#### Arquitectura Lambda Function y SSM .
+ ![Index app](https://github.com/andresWeitzel/ProyectoClientes_ServerlessDynamoDB/blob/master/doc/lambdasApiGateway.png)
+ 
+</br>
+
+
+### 4.0) Instalación y Configuración de SSM
+* Una vez abierto el proyecto instalamos  serverless de forma Global `npm install -g serverless`
+  
+  
+  
+  
+  
+  
+  
+  
 </br>
 
 ###  Instalación de DynamoDB Local
@@ -400,13 +450,7 @@
    * Realizamos los pasos necesarios con git y para el próximo push node_modules será exluido
  
 </br>
- 
-### Extensiones Visual Studio Code
-  * Prettier - Code formatter
-  * YAML - Autoformatter .yml (alt+shift+f)
 
-
-</br>
 
 
 
