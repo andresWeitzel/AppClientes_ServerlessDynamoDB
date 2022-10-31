@@ -54,6 +54,7 @@
 | -------------  | 
 | Prettier - Code formatter |
 | YAML - Autoformatter .yml (alt+shift+f) |
+| DotENV |
 
 
 </br>
