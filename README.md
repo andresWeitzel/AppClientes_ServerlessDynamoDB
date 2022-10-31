@@ -77,9 +77,9 @@
    
 #### Sección 2) SSM e IAM
    
-   - [4.0) Instalación de SSM Local ](#40-instalación-de-ssm-local)
+   - [4.0) Instalación y Configuración de SSM Local ](#40-instalación-y-configuración-de-ssm-local)
    
-   - [5.0) Configuración de SSM Local ](#50-configuración-de-ssm-local)
+   
   
 
 </br>
@@ -119,8 +119,8 @@
 
    provider:
      name: aws
-     runtime: nodejs12.x
-     stage: dev
+     runtime: nodejs14.x
+     stage: offline
      region : us-west-1
      memorySize: 512
      timeout : 20
@@ -168,8 +168,8 @@
 
    provider:
      name: aws
-     runtime: nodejs12.x
-     stage: dev
+     runtime: nodejs14.x
+     stage: offline
      region : us-west-1
      memorySize: 512
      timeout : 10
@@ -414,10 +414,66 @@
 </br>
 
 
-### 4.0) Instalación SSM Local
-* Una vez abierto el proyecto instalamos  serverless de forma Global `npm install -g serverless`
+### 4.0) Instalación y Configuración de SSM Local
+* Instalamos el plugin `npm install serverless-offline serverless-offline-ssm --save-dev`
+* Agregamos el complemento dentro del serverless.yml. Es importante mantener el orden siguiente (serverless-offline siempre último por temas de compatibilidad).
+   
+  ``` YML
+    plugins:
+       - serverless-offline-ssm
+       - serverless-offline
+  ``` 
+* Dentro del proyecto creamos el archivo `serverless.yml.env` que será el que contenga los valores de las variables de entorno de nuestro proyecto
+* Dentro de dicho archivo colocamos una variable test para comprobar su funcionamiento.. 
   
-  
+  ``` YML
+    HELLO_TEST : ${ssm:/hello_test}  
+  ```
+* Declaramos el arhivo `.env` dentro del `serverless.yml` agregando el parametro `enviroment` 
+  ``` YML
+   provider:
+     name: aws
+     runtime: nodejs14.x
+     stage: offline
+     region : us-west-1
+     memorySize: 512
+     timeout : 10
+     environment: ${file(serverless.yml.env)}  
+  ``` 
+* Seguidamente vamos a configurar el ssm dentro del bloque `custom` para el archivo `serverless.yml` 
+* Agregamos el stage y la variable test, quedando..
+
+  ``` YML
+    custom:
+     serverless-offline-ssm:
+       stages:
+         - dev
+       ssm:
+         '/hello_test': 'HELLO SSM'
+     serverless-offline:
+       httpPort: 4000  
+  ```
+* Por último utilizamos dicha variable en la lambda declarada, para invocar una variable de entorno utilizamos `process.env.variable`  
+ 
+    ```js
+      'use strict';
+
+      module.exports.hello = async (event) => {
+        return {
+          statusCode: 200,
+          body: JSON.stringify(
+            {
+              message: process.env.HELLO_TEST,
+              input: event,
+            },
+            null,
+            2
+          ),
+        };
+
+      };
+
+   ```
   
   
   
