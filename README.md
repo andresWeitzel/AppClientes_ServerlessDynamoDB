@@ -444,13 +444,13 @@
      environment: ${file(serverless.yml.env)}  
   ``` 
 * Seguidamente vamos a configurar el ssm dentro del bloque `custom` para el archivo `serverless.yml` 
-* Agregamos el stage y la variable test, quedando..
+* Agregamos el stage (IMPORTANTE RESPETAR EL STAGE DEL PROVIDER Y DEL SSM) y la variable test, quedando..
 
   ``` YML
     custom:
      serverless-offline-ssm:
        stages:
-         - dev
+         - offline
        ssm:
          '/hello_test': 'HELLO SSM'
      serverless-offline:
