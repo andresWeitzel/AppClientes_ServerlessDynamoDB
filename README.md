@@ -101,6 +101,7 @@
 * Instalamos el plugin serverless-offline `npm i serverless-offline`
 * Comprobamos versión `serverless --version`
 * Salida Esperada ..
+
    ``` bash
     Framework Core: 3.23.0
     Plugin: 6.2.2
