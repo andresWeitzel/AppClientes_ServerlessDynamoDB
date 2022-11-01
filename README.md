@@ -113,6 +113,7 @@
 * Configuramos tipo de método y path a través de httpApi.
 * Configuramos el puerto http 
 * Archivo serveless.yml..
+
   ``` yml
   
    service: project-dynamodb
