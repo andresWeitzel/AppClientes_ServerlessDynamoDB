@@ -556,16 +556,6 @@
 
 
 <hr>
- 
-
-### Configuración de gitignore
-   * Vamos a excluir la carpeta `node_modules` para no añadir las librerías a nuestro repositorio.
-   * Creamos el archivo `.gitignore` dentro del directorio del proyecto.
-   * Dentro del archivo añadimos `node_modules/`
-   * Realizamos los pasos necesarios con git y para el próximo push node_modules será exluido
- 
-</br>
-
 
 
 
