@@ -426,13 +426,14 @@
        - serverless-offline-ssm
        - serverless-offline
   ``` 
-* Dentro del proyecto creamos el archivo `serverless.yml.env` que será el que contenga los valores de las variables de entorno de nuestro proyecto
+* Dentro del proyecto creamos el archivo `serverless.env.yml` que será el que contenga los valores de las variables de entorno de nuestro proyecto
 * Dentro de dicho archivo colocamos una variable test para comprobar su funcionamiento.. 
   
   ``` YML
     HELLO_TEST : ${ssm:/hello_test}  
   ```
-* Declaramos el arhivo `.env` dentro del `serverless.yml` agregando el parametro `enviroment` 
+* Relacionamos el arhivo `serverless.env.yml` dentro del `serverless.yml` agregando el parametro `enviroment` junto a dicho archivo..
+ 
   ``` YML
    provider:
      name: aws
@@ -441,7 +442,7 @@
      region : us-west-1
      memorySize: 512
      timeout : 10
-     environment: ${file(serverless.yml.env)}  
+     environment: ${file(serverless.env.yml)}  
   ``` 
 * Seguidamente vamos a configurar el ssm dentro del bloque `custom` para el archivo `serverless.yml` 
 * Agregamos el stage (IMPORTANTE RESPETAR EL STAGE DEL PROVIDER Y DEL SSM) y la variable test, quedando..
@@ -477,6 +478,59 @@
       };
 
    ```
+* Ejecutamos el programa, realizamos la petición get a través de postman a nuestra lambda y podemos visualizar la metadata de la misma junto con nuestra variable de entorno.
+* Salida Esperada..
+
+     ```cmd
+        {
+          "message": "HELLO SSM",
+          "input": {
+              "body": null,
+              "cookies": [],
+              "headers": {
+                  "x-api-key": "d41d8cd98f00b204e9800998ecf8427e",
+                  "content-type": "application/json",
+                  "user-agent": "PostmanRuntime/7.29.2",
+                  "accept": "*/*",
+                  "cache-control": "no-cache",
+                  "postman-token": "ea2e186f-732f-450e-abf2-4572b3e0206b",
+                  "host": "localhost:4000",
+                  "accept-encoding": "gzip, deflate, br",
+                  "connection": "keep-alive",
+                  "content-length": "163"
+              },
+              "isBase64Encoded": false,
+              "pathParameters": null,
+              "queryStringParameters": null,
+              "rawPath": "/hello",
+              "rawQueryString": "",
+              "requestContext": {
+                  "accountId": "offlineContext_accountId",
+                  "apiId": "offlineContext_apiId",
+                  "authorizer": {
+                      "jwt": {}
+                  },
+                  "domainName": "offlineContext_domainName",
+                  "domainPrefix": "offlineContext_domainPrefix",
+                  "http": {
+                      "method": "GET",
+                      "path": "/hello",
+                      "protocol": "HTTP/1.1",
+                      "sourceIp": "127.0.0.1",
+                      "userAgent": "PostmanRuntime/7.29.2"
+                  },
+                  "requestId": "offlineContext_resourceId",
+                  "routeKey": "GET hello",
+                  "stage": "$default",
+                  "time": "31/Oct/2022:23:49:02 -0300",
+                  "timeEpoch": 1667270942415
+              },
+              "routeKey": "GET hello",
+              "stageVariables": null,
+              "version": "2.0"
+          }
+      }
+    ```
   
   
   
