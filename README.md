@@ -1,6 +1,6 @@
-# ProyectoClientes_ServerlessDynamoDB
+# AppClientes_ServerlessDynamoDB
 
-* Proyecto Personal para la gestión de clientes implementando NodeJs, Serverless V3, IAM, SSM, Api Gateway, Bucket S3, DynamoDB y Otras Tecnologías.
+* App para la gestión de clientes implementando NodeJs, Serverless V3, IAM, SSM, Api Gateway, Bucket S3, DynamoDB y Otras Tecnologías.
 
 </br>
 
