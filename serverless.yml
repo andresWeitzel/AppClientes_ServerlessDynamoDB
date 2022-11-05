@@ -10,14 +10,19 @@ provider:
   memorySize: 512
   timeout : 10
   #environment: ${file(serverless.yml.env)}
-  environment: ${file(serverless.env.yml)}
+  environment: 
+    ${file(serverless.env.yml)}
   #environment: ${ssm:/hello_test}
 
 plugins:
     - serverless-offline-ssm
+    - serverless-dynamodb-local
     - serverless-offline
 
 custom:
+  dynamodb:
+    stages:
+      - test
   serverless-offline-ssm:
     stages:
       - offline
@@ -37,6 +42,19 @@ functions:
 
 resources:
   Resources:
+    usersTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: usersTable
+        AttributeDefinitions:
+          - AttributeName: email
+            AttributeType: S
+        KeySchema:
+          - AttributeName: email
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
     ApiGatewayRestApi:
       Type: AWS::ApiGateway::RestApi
       Properties:
