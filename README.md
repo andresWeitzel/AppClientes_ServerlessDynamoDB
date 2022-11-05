@@ -4,6 +4,21 @@
 
 </br>
 
+### Ejecución del Proyecto
+* Crear un entorno de trabajo a través de algún IDE
+* Clonar el Proyecto (`git clone https://github.com/andresWeitzel/AppClientes_ServerlessDynamoDB`)
+* Dentro del directorio instalar todos los plugins implementados
+  * `npm install -g serverless`
+  * `npm i serverless-offline`
+  * `npm install serverless-offline serverless-offline-ssm --save-dev`
+  * `npm install serverless-dynamodb-local --save`
+  * `serverless dynamodb install`
+  * `serverless dynamodb start --migrate`
+* Levantar Serverless en Local (`sls offline start`)
+* Comprobar respuestas de los endpoints generados a través de alguna herramienta Cliente Http (Ej:Postman)
+
+</br>
+
 
 
 
@@ -16,8 +31,10 @@
 | Serverless Plugin | 6.2.2  | Librerías para la Definición Modular |
 | Systems Manager Parameter Store (SSM) | 3.0 | Manejo de Variables de Entorno |
 | Amazon Api Gateway | 2.0 | Gestor, Autenticación, Control y Procesamiento de la Api | 
+| DynamoDB | - | SGDB NoSQL | 
 | NodeJS | 14.18.1  | Librería JS |
 | VSC | 1.72.2  | IDE |
+| Postman| 10.11  | Cliente Http |
 | CMD | 10 | Símbolo del Sistema para linea de comandos | 
 | Git | 2.29.1  | Control de Versiones |
 
@@ -32,8 +49,10 @@
 | Serverless Framework V3 |  https://www.serverless.com//blog/serverless-framework-v3-is-live |
 | Amazon Api Gateway |  https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html |
 | Systems Manager Parameter Store (SSM) | https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html |
+| DynamoDB | https://www.serverless.com/guides/dynamodb |
 | NodeJs |  https://nodejs.org/en/ |
 | VSC |  https://code.visualstudio.com/docs |
+| Postman |  https://learning.postman.com/docs/publishing-your-api/documenting-your-api/ |
 | Git   |  https://git-scm.com/docs |
 
 </br>
@@ -44,6 +63,7 @@
 | -------------  | ------------- |
 | serverless-offline |  https://www.serverless.com/plugins/serverless-offline |
 | serverless-offline-ssm |  https://www.npmjs.com/package/serverless-offline-ssm |
+| serverless-dynamodb-local |  https://www.npmjs.com/package/serverless-dynamodb-local |
 
 
 </br>
@@ -540,13 +560,49 @@
 </br>
 
 ###  Instalación de DynamoDB Local
-(Guía Recomendada : https://fauna.com/blog/develop-using-serverless-offline)
 * Dentro del directorio del proyecto ejecutamos `npm i serverless-dynamodb-local --save`
+* Agregamos el plugin en el .yml
+
+   ```yml
+      plugins:
+         - serverless-dynamodb-local
+   ```
+* No es posible levantar dynamoDB en local definiendo el dev offline. Tenemos que reasignarlo al custom. (Bug: https://github.com/99x/serverless-dynamodb-local/issues/225)
+
+   ```yml
+      custom:
+        dynamodb:
+          stages:
+            - test
+   ```
+
+* Luego instalamos los complementos de dynamo `serverless dynamodb install`
+* Agregamos la config de la db (tablas, propiedades, etc) al archivo .yml.
+   
+   ```yml
+      	
+      resources: # CloudFormation template syntax
+        Resources:
+          usersTable:
+            Type: AWS::DynamoDB::Table
+            Properties:
+              TableName: usersTable
+              AttributeDefinitions:
+                - AttributeName: email
+                  AttributeType: S
+              KeySchema:
+                - AttributeName: email
+                  KeyType: HASH
+              ProvisionedThroughput:
+                ReadCapacityUnits: 1
+                WriteCapacityUnits: 1
+   ```
+
+* Por último Levantamos Dynamo localmente `serverless dynamodb start --migrate`
+
 
 </br>
-
-* https://dynobase.dev/run-dynamodb-locally/
-* https://sitiobigdata.com/2018/02/05/tablas-en-dynamodb-creacion-carga/#
+* https://dynobase.dev/run-dynamodb-locally/#serverless-framework
 * https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-dynamo-db.html
 * https://dynobase.dev/run-dynamodb-locally/#connecting-dynamodb-offline-cli
 
