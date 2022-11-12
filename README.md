@@ -663,6 +663,8 @@
 
 * ÚLTIMA DOC IMPLEMENTADA : https://dev.to/ajinkabeer/run-a-dynamodb-instance-locally-with-node-js-without-an-aws-account-58k6
 
+* CRUD DynamoDB : https://medium.com/dev-jam/serverless-simple-crud-application-in-10-minutes-on-aws-69e022298e80
+
 </br>
 
 
