@@ -9,6 +9,7 @@
 * Clonar el Proyecto (`git clone https://github.com/andresWeitzel/AppClientes_ServerlessDynamoDB`)
 * Dentro del directorio instalar todos los plugins implementados
   * `npm install -g serverless`
+  * `pip install awscli` 
   * `npm i serverless-offline`
   * `npm install serverless-offline serverless-offline-ssm --save-dev`
   * `npm install serverless-dynamodb-local --save`
@@ -29,6 +30,7 @@
 | SDK | 4.3.2  | Inyección Automática de Módulas para Lambdas |
 | Serverless Framework Core | 3.23.0 | Core Servicios AWS |
 | Serverless Plugin | 6.2.2  | Librerías para la Definición Modular |
+| AWS CLI | 1.27.8 | Interfaz de línea de comandos unificada para Amazon Web Servicios. |
 | Systems Manager Parameter Store (SSM) | 3.0 | Manejo de Variables de Entorno |
 | Amazon Api Gateway | 2.0 | Gestor, Autenticación, Control y Procesamiento de la Api | 
 | DynamoDB | - | SGDB NoSQL | 
@@ -49,6 +51,7 @@
 | Serverless Framework V3 |  https://www.serverless.com//blog/serverless-framework-v3-is-live |
 | Amazon Api Gateway |  https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html |
 | Systems Manager Parameter Store (SSM) | https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html |
+| AWS CLI | https://docs.aws.amazon.com/cli/index.html | 
 | DynamoDB | https://www.serverless.com/guides/dynamodb |
 | NodeJs |  https://nodejs.org/en/ |
 | VSC |  https://code.visualstudio.com/docs |
@@ -64,6 +67,7 @@
 | serverless-offline |  https://www.serverless.com/plugins/serverless-offline |
 | serverless-offline-ssm |  https://www.npmjs.com/package/serverless-offline-ssm |
 | serverless-dynamodb-local |  https://www.npmjs.com/package/serverless-dynamodb-local |
+| awscli | https://pypi.org/project/awscli/ |
 
 
 </br>
@@ -559,7 +563,7 @@
   
 </br>
 
-###  Instalación de DynamoDB Local
+###  Instalación y Configuración de DynamoDB Local
 * Dentro del directorio del proyecto ejecutamos `npm i serverless-dynamodb-local --save`
 * Agregamos el plugin en el .yml
 
@@ -590,8 +594,9 @@
                 WriteCapacityUnits: 1
    ```
 
-* Por último Levantamos Dynamo localmente `serverless dynamodb start --migrate`
+* Verificamos que Dynamo este corriendo localmente `serverless dynamodb start --migrate`
 * Salida esperada..
+
    ```cmd
     Dynamodb Local Started, Visit: http://localhost:8000/shell
     DynamoDB - created table usersTable
@@ -599,6 +604,41 @@
    ```
 
 
+</br>
+
+###  Ejecución de DynamoDB en Local
+* Para poder visualizar nuestro esquema de tablas y datos en local debemos utilizar `aws cli`.
+* Instalamos dicho paquete `pip install awscli`
+* Comprobamos la versión `aws --version`
+* Salida Esperada...
+ 
+  ```cmd
+    aws-cli/1.27.8 Python/3.9.5 Windows/10 botocore/1.29.8
+  ```
+* Configuramos `credenciales ficticias`. DynamoDB offline no las validará, solo hay que proporcionarlas, no puede estar en blanco.
+* `export AWS_ACCESS_KEY_ID=223344`
+* `export AWS_SECRET_ACCESS_KEY=wJalrXUtTHISI/DYNAMODB/bPxRfiCYEXAMPLEKEY`
+* Seguidamente en otra bash/terminal levantamos Dynamodb `serverless dynamodb start --migrate`
+* Salida esperada..
+
+   ```cmd
+    Dynamodb Local Started, Visit: http://localhost:8000/shell
+    DynamoDB - created table usersTable
+   
+   ```
+* Regresando a la consola anterior levantamos aws cli con el endpoint que se nos ha generado (http://localhost:8000) y pasandole la región.
+* Ejecutamos `aws dynamodb list-tables --endpoint-url http://localhost:8000 --region=us-east-1`
+* Salida Esperada..
+  
+   ```cmd
+       {
+        "TableNames": [
+            "usersTable"
+        ]
+    }
+   
+   ```
+* `Hemos creado, configurado y ejecutado correctamente todo lo planteado con DynamoDB`
 
 </br>
 
