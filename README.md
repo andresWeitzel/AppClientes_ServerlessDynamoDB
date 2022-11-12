@@ -591,9 +591,17 @@
    ```
 
 * Por último Levantamos Dynamo localmente `serverless dynamodb start --migrate`
+* Salida esperada..
+   ```cmd
+    Dynamodb Local Started, Visit: http://localhost:8000/shell
+    DynamoDB - created table usersTable
+   
+   ```
+
 
 
 </br>
+
 * https://dynobase.dev/run-dynamodb-locally/#serverless-framework
 * https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-dynamo-db.html
 * https://dynobase.dev/run-dynamodb-locally/#connecting-dynamodb-offline-cli
