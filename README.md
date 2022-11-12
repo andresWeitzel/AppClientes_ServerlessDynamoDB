@@ -218,6 +218,7 @@
 * Nuestro `api-gateway.yml` quedaría..
 
   ``` yml
+   Resources:
       ApiGatewayRestApi:
       Type: AWS::ApiGateway::RestApi
       Properties:
@@ -619,7 +620,8 @@
 * Agregamos la config de la db (tablas, propiedades, etc) dentro de dicho .yml.
 * Nuestro archivo `dynamo-table.yml` quedaría....
    
-   ```yml 
+   ```yml
+    Resources:
      usersTable:
        Type: AWS::DynamoDB::Table
        Properties:
@@ -648,7 +650,7 @@
 
   ```
 
-* Verificamos que Dynamo este corriendo localmente `serverless dynamodb start --migrate`
+* Verificamos que Dynamo haya sido configurado correctamente, ejecutamos dicho sgdb... `serverless dynamodb start --migrate`
 * Salida esperada..
 
    ```cmd
@@ -692,7 +694,7 @@
     }
    
    ```
-* `Hemos creado, configurado y ejecutado correctamente todo lo planteado con DynamoDB`
+* `Hemos creado, configurado y ejecutado correctamente lo básico para poder trabajar con DynamoDB`
 
 </br>
 
@@ -705,6 +707,7 @@
 * ÚLTIMA DOC IMPLEMENTADA : https://dev.to/ajinkabeer/run-a-dynamodb-instance-locally-with-node-js-without-an-aws-account-58k6
 
 * CRUD DynamoDB : https://medium.com/dev-jam/serverless-simple-crud-application-in-10-minutes-on-aws-69e022298e80
+* Other CRUD DynamoDB : https://dev.to/rajandmr/dynamodb-crud-with-nodejs-and-lambda-inn
 
 </br>
 
