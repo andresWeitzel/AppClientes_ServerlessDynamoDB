@@ -39,20 +39,20 @@ functions:
           method: GET
           path: hello
           private: true
-  # createUser:
-  #   handler: createUser.add
-  #   events:
-  #     - httpApi:
-  #         method: POST
-  #         path: create
-  #         private: true        
-  # getAllUsers:
-  #   handler: getAllUsers.get
-  #   events:
-  #     - httpApi:
-  #         method: GET
-  #         path: get-all
-  #         private: true
+  createUser:
+    handler: src/lambdas/createUser.add
+    events:
+      - httpApi:
+          method: POST
+          path: create
+          private: true        
+  getAllUsers:
+    handler: src/lambdas/getAllUsers.get
+    events:
+      - httpApi:
+          method: GET
+          path: get-all
+          private: true
 resources:
   - ${file(src/resources/api-gateway.yml)}
   - ${file(src/resources/dynamo-table.yml)}
