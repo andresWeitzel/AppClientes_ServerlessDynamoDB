@@ -143,7 +143,7 @@
    provider:
      name: aws
      runtime: nodejs14.x
-     stage: offline
+     stage: dev
      region : us-west-1
      memorySize: 512
      timeout : 20
@@ -192,7 +192,7 @@
    provider:
      name: aws
      runtime: nodejs14.x
-     stage: offline
+     stage: dev
      region : us-west-1
      memorySize: 512
      timeout : 10
@@ -458,7 +458,7 @@
    provider:
      name: aws
      runtime: nodejs14.x
-     stage: offline
+     stage: dev
      region : us-west-1
      memorySize: 512
      timeout : 10
@@ -471,7 +471,7 @@
     custom:
      serverless-offline-ssm:
        stages:
-         - offline
+         - dev
        ssm:
          '/hello_test': 'HELLO SSM'
      serverless-offline:
@@ -566,14 +566,6 @@
    ```yml
       plugins:
          - serverless-dynamodb-local
-   ```
-* No es posible levantar dynamoDB en local definiendo el dev offline. Tenemos que reasignarlo al custom. (Bug: https://github.com/99x/serverless-dynamodb-local/issues/225)
-
-   ```yml
-      custom:
-        dynamodb:
-          stages:
-            - test
    ```
 
 * Luego instalamos los complementos de dynamo `serverless dynamodb install`
