@@ -1,6 +1,6 @@
 # AppClientes_ServerlessDynamoDB
 
-* App para la gestión de clientes implementando NodeJs, Serverless V3, IAM, SSM, Api Gateway, DynamoDB y Otras Tecnologías.
+* App para la gestión de clientes implementando NodeJs, Serverless V3, AWS CLI, SSM, Api Gateway, DynamoDB y Otras Tecnologías.
 
 </br>
 
