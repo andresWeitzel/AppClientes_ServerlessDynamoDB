@@ -702,12 +702,8 @@
 * https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-dynamo-db.html
 * https://dynobase.dev/run-dynamodb-locally/#connecting-dynamodb-offline-cli
 
-* ARQUITECTURA A SEGUIR : https://www.freecodecamp.org/news/complete-back-end-system-with-serverless/
-
-* ÚLTIMA DOC IMPLEMENTADA : https://dev.to/ajinkabeer/run-a-dynamodb-instance-locally-with-node-js-without-an-aws-account-58k6
-
 * CRUD DynamoDB : https://medium.com/dev-jam/serverless-simple-crud-application-in-10-minutes-on-aws-69e022298e80
-* Other CRUD DynamoDB : https://dev.to/rajandmr/dynamodb-crud-with-nodejs-and-lambda-inn
+* ÚLTIMA DOC IMPLEMENTADA CRUD DynamoDB : https://dev.to/rajandmr/dynamodb-crud-with-nodejs-and-lambda-inn
 
 </br>
 
