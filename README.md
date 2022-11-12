@@ -107,8 +107,8 @@
 #### Sección 3) DynamoDB
    
    - [5.0) Instalación y Configuración de DynamoDB Local ](#50-instalación-y-configuración-de-dynamodb-local)
-   - 
-   - [6.0) Ejecución de DynamoDB Local ](#60-ejecucion-de-dynamodb-local)
+   
+   - [6.0) Ejecución de DynamoDB Local ](#60-ejecución-de-dynamodb-local)
    
       
   
@@ -656,6 +656,8 @@
 * https://dynobase.dev/run-dynamodb-locally/#connecting-dynamodb-offline-cli
 
 * ARQUITECTURA A SEGUIR : https://www.freecodecamp.org/news/complete-back-end-system-with-serverless/
+
+* ÚLTIMA DOC IMPLEMENTADA : https://dev.to/ajinkabeer/run-a-dynamodb-instance-locally-with-node-js-without-an-aws-account-58k6
 
 </br>
 
