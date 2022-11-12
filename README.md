@@ -100,11 +100,17 @@
    
    - [3.0) Ejecución de Serverless Local](#30-ejecución-de-serverless-local)
    
-#### Sección 2) SSM e IAM
+#### Sección 2) SSM 
    
    - [4.0) Instalación y Configuración de SSM Local ](#40-instalación-y-configuración-de-ssm-local)
    
+#### Sección 3) DynamoDB
    
+   - [5.0) Instalación y Configuración de DynamoDB Local ](#50-instalación-y-configuración-de-dynamodb-local)
+   - 
+   - [6.0) Ejecución de DynamoDB Local ](#60-ejecucion-de-dynamodb-local)
+   
+      
   
 
 </br>
@@ -432,7 +438,7 @@
   
 </br>
 
-## Sección 2) SSM e IAM 
+## Sección 2) SSM 
 
 
 #### Arquitectura Lambda Function y SSM .
@@ -563,7 +569,10 @@
   
 </br>
 
-###  Instalación y Configuración de DynamoDB Local
+## Sección 3) DynamoDB
+
+
+###  5.0) Instalación y Configuración de DynamoDB Local
 * Dentro del directorio del proyecto ejecutamos `npm i serverless-dynamodb-local --save`
 * Agregamos el plugin en el .yml
 
@@ -576,7 +585,7 @@
 * Agregamos la config de la db (tablas, propiedades, etc) al archivo .yml.
    
    ```yml
-      	
+    
       resources: # CloudFormation template syntax
         Resources:
           usersTable:
@@ -606,7 +615,7 @@
 
 </br>
 
-###  Ejecución de DynamoDB en Local
+### 6.0) Ejecución de DynamoDB Local
 * Para poder visualizar nuestro esquema de tablas y datos en local debemos utilizar `aws cli`.
 * Instalamos dicho paquete `pip install awscli`
 * Comprobamos la versión `aws --version`
