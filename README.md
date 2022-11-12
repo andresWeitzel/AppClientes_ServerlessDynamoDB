@@ -570,6 +570,10 @@
 </br>
 
 ## Sección 3) DynamoDB
+#### Arquitectura Lambda, Api Gateway y DynamoDB.
+ ![Index app](https://github.com/andresWeitzel/AppClientes_ServerlessDynamoDB/blob/master/doc/lambdasDynamo.png)
+ 
+</br>
 
 
 ###  5.0) Instalación y Configuración de DynamoDB Local
