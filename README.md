@@ -8,6 +8,7 @@
 * Crear un entorno de trabajo a través de algún IDE
 * Clonar el Proyecto (`git clone https://github.com/andresWeitzel/AppClientes_ServerlessDynamoDB`)
 * Dentro del directorio instalar todos los plugins implementados
+  * `npm install serverless-offline --save-dev`
   * `npm install -g serverless`
   * `pip install awscli` 
   * `npm i serverless-offline`
