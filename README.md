@@ -16,6 +16,7 @@
   * `npm install serverless-dynamodb-local --save`
   * `serverless dynamodb install`
   * `serverless dynamodb start --migrate`
+  * Reiniciar el IDE caso de tenerlo ejecutado. 
 * Levantar Serverless en Local (`sls offline start`)
 * Comprobar respuestas de los endpoints generados a través de alguna herramienta Cliente Http (Ej:Postman)
 
