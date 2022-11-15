@@ -12,7 +12,7 @@
   * `npm install -g serverless`
   * `pip install awscli` 
   * `npm i serverless-offline`
-  * `npm install serverless-offline serverless-offline-ssm --save-dev`
+  * `npm install serverless-offline-ssm --save-dev`
   * `npm install serverless-dynamodb-local --save`
   * `serverless dynamodb install`
   * `serverless dynamodb start --migrate`
