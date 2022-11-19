@@ -8,13 +8,14 @@
 * Crear un entorno de trabajo a través de algún IDE
 * Clonar el Proyecto (`git clone https://github.com/andresWeitzel/AppClientes_ServerlessDynamoDB`)
 * Dentro del directorio instalar todos los plugins implementados
+  * `npm install serverless-offline --save-dev`
   * `npm install -g serverless`
   * `pip install awscli` 
-  * `npm i serverless-offline`
-  * `npm install serverless-offline serverless-offline-ssm --save-dev`
+  * `npm install serverless-offline-ssm --save-dev`
   * `npm install serverless-dynamodb-local --save`
   * `serverless dynamodb install`
   * `serverless dynamodb start --migrate`
+  * Reiniciar el IDE caso de tenerlo ejecutado. 
 * Levantar Serverless en Local (`sls offline start`)
 * Comprobar respuestas de los endpoints generados a través de alguna herramienta Cliente Http (Ej:Postman)
 
