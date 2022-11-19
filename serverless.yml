@@ -15,8 +15,8 @@ provider:
   #environment: ${ssm:/hello_test}
 
 plugins:
-    - serverless-offline-ssm
     - serverless-dynamodb-local
+    - serverless-offline-ssm
     - serverless-offline
 
 custom:
