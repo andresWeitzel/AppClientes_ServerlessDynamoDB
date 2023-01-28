@@ -492,7 +492,7 @@
 
 </br>   
 
-* Código Base de Ejemplo : https://gist.github.com/jonatassaraiva/4c33dd8225605c02318cd71a55b2335d
+* [Código Base de Ejemplo](https://gist.github.com/jonatassaraiva/4c33dd8225605c02318cd71a55b2335d)
 
 
 
@@ -705,7 +705,7 @@
  
  <br>
  
- ![Index app](https://github.com/andresWeitzel/AppClientes_ServerlessDynamoDB/blob/master/doc/lambdasDynamo.png)
+ ![Index app](./doc/lambdasDynamo.png)
  
  <br>
 
