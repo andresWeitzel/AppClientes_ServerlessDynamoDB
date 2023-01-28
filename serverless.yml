@@ -9,10 +9,8 @@ provider:
   region : us-west-1
   memorySize: 512
   timeout : 10
-  #environment: ${file(serverless.yml.env)}
   environment: 
     ${file(serverless.env.yml)}
-  #environment: ${ssm:/hello_test}
 
 plugins:
     - serverless-dynamodb-local
@@ -35,21 +33,21 @@ functions:
   hello:
     handler: src/lambdas/hello.test
     events:
-      - httpApi:
+      - http:
           method: GET
           path: hello
           private: true
   createUser:
     handler: src/lambdas/createUser.add
     events:
-      - httpApi:
+      - http:
           method: POST
           path: create
           private: true        
   getAllUsers:
     handler: src/lambdas/getAllUsers.get
     events:
-      - httpApi:
+      - http:
           method: GET
           path: get-all
           private: true
