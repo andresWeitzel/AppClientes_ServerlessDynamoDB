@@ -32,6 +32,10 @@
  
  
  ### Sección 3) DynamoDB
+ 
+ - [3.0) Arquitectura Lambda, Api Gateway y DynamoDB](#30-arquitectura-lambda-api-gateway-y-dynamodb-)
+ - [3.1) Instalación y Configuración de DynamoDB Local](#31-instalación-y-configuración-de-dynamodb-local-)
+ - [3.2) Ejecución de DynamoDB Local](#32-ejecución-de-dynamodb-local-)
 
 <br>
 
