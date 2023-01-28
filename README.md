@@ -31,7 +31,7 @@
       - [2.3.1) Instalación y Configuración de SSM Local](#231-instalación-y-configuración-de-ssm-local-)
  
  
- 
+ ### Sección 3) DynamoDB
 
 <br>
 
@@ -689,45 +689,34 @@
 
 
 <br>
-  
 
-
-
-
-
-
-
-
-
-## Documentación y Guía del Proyecto
-#### (Esta Documentación es para la Creación y/o Configuración de cada Servicio de AWS, se ha generado de forma sucinta en relación a la doc oficial y no oficial solventando aspectos de compatibilidad de versiones y configuraciones personalizadas. Recomiendo la ejecución de cada servicio según se indica en la misma).
-
-</br>
-
-### Indice.
-
-
-#### Sección 3) DynamoDB
-   
-   - [5.0) Instalación y Configuración de DynamoDB Local ](#50-instalación-y-configuración-de-dynamodb-local)
-   
-   - [6.0) Ejecución de DynamoDB Local ](#60-ejecución-de-dynamodb-local)
-   
-      
-
-  
-  
-</br>
 
 ## Sección 3) DynamoDB
-#### Arquitectura Lambda, Api Gateway y DynamoDB.
+
+
+### 3.0) Arquitectura Lambda, Api Gateway y DynamoDB [🔝](#índice-)
+
+<details>
+ <summary>Ver</summary>
+ 
+ <br>
+ 
  ![Index app](https://github.com/andresWeitzel/AppClientes_ServerlessDynamoDB/blob/master/doc/lambdasDynamo.png)
  
-</br>
+ <br>
+
+</details>
 
 
-###  5.0) Instalación y Configuración de DynamoDB Local
-* Dentro del directorio del proyecto ejecutamos `npm i serverless-dynamodb-local --save`
+
+### 3.1) Instalación y Configuración de DynamoDB Local [🔝](#índice-)
+
+<details>
+ <summary>Ver</summary>
+ 
+ <br>
+
+ * Dentro del directorio del proyecto ejecutamos `npm i serverless-dynamodb-local --save`
 * Agregamos el plugin en el .yml
 
    ```yml
@@ -779,11 +768,19 @@
    
    ```
 
+ <br>
 
-</br>
+</details>
+  
 
-### 6.0) Ejecución de DynamoDB Local
-* Para poder visualizar nuestro esquema de tablas y datos en local debemos utilizar `aws cli`.
+### 3.2) Ejecución de DynamoDB Local [🔝](#índice-)
+
+<details>
+ <summary>Ver</summary>
+ 
+ <br>
+
+ * Para poder visualizar nuestro esquema de tablas y datos en local debemos utilizar `aws cli`.
 * Instalamos dicho paquete `pip install awscli`
 * Comprobamos la versión `aws --version`
 * Salida Esperada...
@@ -825,12 +822,16 @@
 * CRUD DynamoDB : https://medium.com/dev-jam/serverless-simple-crud-application-in-10-minutes-on-aws-69e022298e80
 * ÚLTIMA DOC IMPLEMENTADA CRUD DynamoDB : https://dev.to/rajandmr/dynamodb-crud-with-nodejs-and-lambda-inn
 
-</br>
+ 
+ 
+ <br>
+
+</details>
 
 
-<hr>
 
 
 
-## `DOCUMENTACIÓN EN PROCESO DE DESARROLLO`
+
+
 
