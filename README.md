@@ -27,8 +27,9 @@
  - [2.1) Configuración de Api Gateway](#21-configuración-de-api-gateway-) 
  - [2.2) Ejecución de Serverless Local](#22-ejecución-de-serverless-local-)
  - [2.3) SSM y IAM](#23-ssm-y-iam-)
+      - [2.3.0) Arquitectura Lambda Function y SSM](#230-arquitectura-lambda-function-y-ssm)
       - [2.3.1) Instalación y Configuración de SSM Local](#231-instalación-y-configuración-de-ssm-local-)
-  
+ 
  
  
 
@@ -546,7 +547,7 @@
 
 ### 2.3) SSM e IAM [🔝](#índice-)
 
-### Arquitectura Lambda Function y SSM 
+### 2.3.0) Arquitectura Lambda Function y SSM 
 
 <details>
  <summary>Ver</summary>
