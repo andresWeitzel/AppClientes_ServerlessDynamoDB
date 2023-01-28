@@ -2,9 +2,72 @@
 
 * App para la gestión de clientes implementando NodeJs, Serverless V3, AWS CLI, SSM, Api Gateway, DynamoDB y Otras Tecnologías.
 
-</br>
 
-### Ejecución del Proyecto
+<br>
+
+## Índice 📜
+
+<details>
+ <summary> Ver </summary>
+ 
+ <br>
+ 
+### Sección 1) Descripción, Tecnologías y Dependencias 
+
+ - [1.0) Descripción del Proyecto.](#10-descripción-)
+ - [1.1) Ejecución del Proyecto.](#11-ejecución-del-proyecto-)
+ - [1.2) Tecnologías.](#12-tecnologías-)
+ - [1.3) Plugins.](#13-plugins-)
+ - [1.4) Extensiones VSC.](#14-extensiones-vsc-)
+ 
+ 
+### Sección 2) Proyecto Serverless desde cero 
+ 
+ - [2.0) Instalación y Configuración de Serverless Local](#20-instalación-y-configuración-de-serverless-local-)
+ - [2.1) Configuración de Api Gateway](#21-configuración-de-api-gateway-) 
+ - [2.2) Ejecución de Serverless Local](#22-ejecución-de-serverless-local-)
+ - [2.3) SSM y IAM](#23-ssm-y-iam-)
+      - [2.3.1) Instalación y Configuración de SSM Local](#231-instalación-y-configuración-de-ssm-local-)
+  
+ 
+ 
+
+<br>
+
+</details>
+
+
+
+
+
+
+
+
+
+<br>
+
+## Sección 1) Descripción, Tecnologías y Dependencias 
+
+
+### 1.0) Descripción [🔝](#índice-) 
+
+<details>
+  <summary>Ver</summary>
+ 
+ <br>
+
+* ipsum
+
+<br>
+
+</details>
+
+
+### 1.1) Ejecución del Proyecto [🔝](#índice-)
+
+<details>
+  <summary>Ver</summary>
+  
 * Crear un entorno de trabajo a través de algún IDE
 * Clonar el Proyecto (`git clone https://github.com/andresWeitzel/AppClientes_ServerlessDynamoDB`)
 * Dentro del directorio instalar todos los plugins implementados
@@ -19,10 +82,17 @@
 * Levantar Serverless en Local (`sls offline start`)
 * Comprobar respuestas de los endpoints generados a través de alguna herramienta Cliente Http (Ej:Postman)
 
-</br>
+<br>
+
+</details>
 
 
+### 1.2) Tecnologías [🔝](#índice-)
 
+<details>
+  <summary>Ver</summary>
+ 
+ <br>
 
 ### Tecnologías Implementadas
 
@@ -41,27 +111,15 @@
 | CMD | 10 | Símbolo del Sistema para linea de comandos | 
 | Git | 2.29.1  | Control de Versiones |
 
+<br>
+
+</details>
 
 
-</br>
+### 1.3) Plugins [🔝](#índice-)
 
-### Documentación Oficial de las Tecnologías Implementadas.
-
-| **Tecnología** | **Documentación** |               
-| -------------  | ------------- |
-| Serverless Framework V3 |  https://www.serverless.com//blog/serverless-framework-v3-is-live |
-| Amazon Api Gateway |  https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html |
-| Systems Manager Parameter Store (SSM) | https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html |
-| AWS CLI | https://docs.aws.amazon.com/cli/index.html | 
-| DynamoDB | https://www.serverless.com/guides/dynamodb |
-| NodeJs |  https://nodejs.org/en/ |
-| VSC |  https://code.visualstudio.com/docs |
-| Postman |  https://learning.postman.com/docs/publishing-your-api/documenting-your-api/ |
-| Git   |  https://git-scm.com/docs |
-
-</br>
-
-### Plugins Implementados.
+<details>
+  <summary>Ver</summary>
 
 | **Plugin** | **Descarga** |               
 | -------------  | ------------- |
@@ -70,10 +128,14 @@
 | serverless-dynamodb-local |  https://www.npmjs.com/package/serverless-dynamodb-local |
 | awscli | https://pypi.org/project/awscli/ |
 
+<br>
 
-</br>
+</details>
 
-### Extensiones VSC Implementados.
+### 1.4) Extensiones VSC [🔝](#índice-)
+
+<details>
+ <summary>Ver</summary>
 
 | **Extensión** |              
 | -------------  | 
@@ -82,50 +144,37 @@
 | DotENV |
 
 
-</br>
+<br>
 
-<hr>
-
-## Documentación y Guía del Proyecto
-#### (Esta Documentación es para la Creación y/o Configuración de cada Servicio de AWS, se ha generado de forma sucinta en relación a la doc oficial y no oficial solventando aspectos de compatibilidad de versiones y configuraciones personalizadas. Recomiendo la ejecución de cada servicio según se indica en la misma).
-
-</br>
-
-### Indice.
-
-#### Sección 1) Serverless Local y Api Gateway
-   
-   - [1.0) Instalación y Configuración de Serverless Local](#10-instalación-y-configuración-de-serverless-local)
-  
-   - [2.0) Configuración de Api Gateway](#20-configuración-de-api-gateway)
-   
-   - [3.0) Ejecución de Serverless Local](#30-ejecución-de-serverless-local)
-   
-#### Sección 2) SSM 
-   
-   - [4.0) Instalación y Configuración de SSM Local ](#40-instalación-y-configuración-de-ssm-local)
-   
-#### Sección 3) DynamoDB
-   
-   - [5.0) Instalación y Configuración de DynamoDB Local ](#50-instalación-y-configuración-de-dynamodb-local)
-   
-   - [6.0) Ejecución de DynamoDB Local ](#60-ejecución-de-dynamodb-local)
-   
-      
-  
-
-</br>
-
-## Sección 1) Serverless Local y Api Gateway
+</details>
 
 
-#### Arquitectura Lambda Function y Api gateway .
- ![Index app](https://github.com/andresWeitzel/ProyectoClientes_ServerlessDynamoDB/blob/master/doc/lambdasApiGateway.png)
+<br>
+
+## Sección 2) Proyecto Serverless desde cero
+
+### Arquitectura Lambda Function y Api gateway 
+
+<details>
+  <summary>Ver</summary>
  
-</br>
+ 
+ <br>
+ 
+<img src="./doc/lambdasApiGateway.png" style="width: 70%; height: 70%"/>
+
+<br>
+
+</details>
 
 
-### 1.0) Instalación y Configuración de Serverless Local
+### 2.0) Instalación y Configuración de Serverless Local [🔝](#índice-)
+
+<details>
+ <summary>Ver</summary>
+ 
+ <br>
+
 * Una vez abierto el proyecto instalamos  serverless de forma Global `npm install -g serverless`
 * Seguidamente creamos toda la config de serverless para nuestro proyecto(en mi caso el nombre del proyecto es `project-dynamodb`) `serverless create --template aws-nodejs --path project-dynamodb && cd project-dynamodb`
 * Luego inicializamos el package.json en el proyecto `npm init -y`.
@@ -206,10 +255,20 @@
 * Config Parámetros Provider : https://www.tutorialspoint.com/serverless/serverless_regions_memory_size_timeouts.htm
 
 
-</br>
+<br>
+ 
+</details>
 
-### 2.0) Configuración de Api Gateway
-* API Gateway gestiona todas las tareas relacionadas con la aceptación y el procesamiento de centenares de miles de llamadas simultáneas a la API. Estas tareas incluyen la administración del tráfico, el control de la autorización y el acceso, el monitoreo y la administración de versiones de la API.
+
+### 2.1) Configuración de Api Gateway [🔝](#índice-) 
+
+<details>
+ <summary>Ver</summary>
+ 
+ <br>
+ 
+ 
+ * API Gateway gestiona todas las tareas relacionadas con la aceptación y el procesamiento de centenares de miles de llamadas simultáneas a la API. Estas tareas incluyen la administración del tráfico, el control de la autorización y el acceso, el monitoreo y la administración de versiones de la API.
 * No es necesario la instalación de ningún paquete adicional, este servicio viene incluido en la instalación principal de serverless.
 * Para cada lambda es necesario adicionar el parametro `private: true` dentro de `- httpApi` para que se aplique la restricción de acceso correctamente.
 * Vamos a generar una sección de `resources` . Esta es la plantilla de CloudFormation (Servicio de recursos de AWS) para declarar los recursos de serverless a utilizar.
@@ -432,9 +491,22 @@
 
 
 
-</br>
+<br>
 
-### 3.0) Ejecución de Serverless Local
+</details>
+ 
+
+
+
+
+### 2.2) Ejecución de Serverless Local [🔝](#índice-)
+
+<details>
+ <summary>Ver</summary>
+ 
+ <br>
+
+
 * Por defecto tenemos configurado una lambda llamada hello a través de su función .test que se ha modificado( por defecto serverless crea una lambda handler.js)
 * Además tenemos configurada la seguridad y manejo de responses por parte de la Api Gateway, esta nos provera un token de acceso (x-api-key) para el acceso a cada lambda.
 * Levantamos serverless con el comando `sls offline start` o `serverless offline start`
@@ -465,20 +537,37 @@
   ```
   
   
-  
-  
-</br>
+<br>
 
-## Sección 2) SSM 
-
-
-#### Arquitectura Lambda Function y SSM .
- ![Index app](https://github.com/andresWeitzel/ProyectoClientes_ServerlessDynamoDB/blob/master/doc/ssmLambdas.png)
+</details>
  
-</br>
 
 
-### 4.0) Instalación y Configuración de SSM Local
+
+### 2.3) SSM e IAM [🔝](#índice-)
+
+### Arquitectura Lambda Function y SSM 
+
+<details>
+ <summary>Ver</summary>
+ 
+<br>
+ 
+<img src="./doc/ssmLambdas.png" style="width: 70%; height: 70%"/>
+
+<br>
+
+</details>
+
+
+### 2.3.1) Instalación y Configuración de SSM Local [🔝](#índice-)
+
+
+<details>
+ <summary>Ver</summary>
+ 
+ <br>
+
 * Instalamos el plugin `npm install serverless-offline serverless-offline-ssm --save-dev`
 * Agregamos el complemento dentro del serverless.yml. Es importante mantener el orden siguiente (serverless-offline siempre último por temas de compatibilidad).
    
@@ -593,9 +682,38 @@
       }
     ```
   
+  <br>
+
+</details>
+
+
+<br>
   
-  
-  
+
+
+
+
+
+
+
+
+
+## Documentación y Guía del Proyecto
+#### (Esta Documentación es para la Creación y/o Configuración de cada Servicio de AWS, se ha generado de forma sucinta en relación a la doc oficial y no oficial solventando aspectos de compatibilidad de versiones y configuraciones personalizadas. Recomiendo la ejecución de cada servicio según se indica en la misma).
+
+</br>
+
+### Indice.
+
+
+#### Sección 3) DynamoDB
+   
+   - [5.0) Instalación y Configuración de DynamoDB Local ](#50-instalación-y-configuración-de-dynamodb-local)
+   
+   - [6.0) Ejecución de DynamoDB Local ](#60-ejecución-de-dynamodb-local)
+   
+      
+
   
   
 </br>
